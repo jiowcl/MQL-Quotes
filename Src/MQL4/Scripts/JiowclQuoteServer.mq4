@@ -224,6 +224,8 @@ int GetCurrentSymbolsOnTicket()
               vbid
             ));
           }
+          
+        changed ++;
       }
          
     return changed;

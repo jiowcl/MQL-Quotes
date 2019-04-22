@@ -6,6 +6,7 @@
     <Authors>Ji-Feng Tsai</Authors>
     <Company />
     <Description>Demo application for MQL Quotes</Description>
+    <Copyright>Copyright Jiowcl 2019</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

@@ -25,13 +25,13 @@ MT4 Client Quotes Export
 
 # Publisher Response
 
-| Properties | Description |
-| --- | --- |
-| `Login`   | Login |
-| `Symbol`  | Symbol name |
-| `Ask`     | Ask price |
-| `Bid`     | Bid price |
-| `Spread`  | Spread value in points |
+| Properties | Type | Description |
+| --- | --- | --- |
+| `Login`  | Integer | Login |
+| `Symbol` | String  | Symbol name |
+| `Ask`    | Double  | Ask price |
+| `Bid`    | Double  | Bid price |
+| `Spread` | Integer | Spread value in points |
 
 # License
 

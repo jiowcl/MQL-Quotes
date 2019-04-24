@@ -1,5 +1,5 @@
 # MQL-Quotes
-MT4 Client Quotes Export
+MT4 Client Quotes Export, Can be easily integrated with personal websites without the MT4 Manager API.
 
 # Environment
 

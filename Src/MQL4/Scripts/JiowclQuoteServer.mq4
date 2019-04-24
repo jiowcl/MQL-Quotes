@@ -205,6 +205,7 @@ int GetCurrentSymbolsOnTicket()
         string symbolname    = SymbolName(symbolindex, symbolinmarketwatch);
         double vask          = MarketInfo(symbolname, MODE_ASK);
         double vbid          = MarketInfo(symbolname, MODE_BID);
+        int    vspread       =(int)MarketInfo(symbolname, MODE_SPREAD);
         
         if (GetSymbolAllowed(symbolname) == false)
           continue;
@@ -217,11 +218,12 @@ int GetCurrentSymbolsOnTicket()
           
         if (symbolchanged == true)
           {
-            PushToSubscriber(StringFormat("%d %s|%f|%f",
+            PushToSubscriber(StringFormat("%d %s|%f|%f|%f",
               AccountInfoInteger(ACCOUNT_LOGIN),
               symbolname,
               vask,
-              vbid
+              vbid,
+              vspread
             ));
           }
           

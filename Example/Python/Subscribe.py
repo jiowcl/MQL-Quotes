@@ -21,7 +21,12 @@ def main():
             message = recvMsg.split(" ")
             quotes = message[1].split("|")
 
-            print(quotes)
+            v_symbol = quotes[0]
+            v_ask = quotes[1]
+            v_bid = quotes[2]
+            v_spread = quotes[3]
+            
+            print("Symbol: ", v_symbol, ", Ask: ", v_ask, ", Bid: ", v_bid, ", Spread: ", v_spread)
     except KeyboardInterrupt:
         pass
 

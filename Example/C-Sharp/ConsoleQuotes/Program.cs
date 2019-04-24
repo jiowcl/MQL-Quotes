@@ -25,15 +25,16 @@ namespace ConsoleQuotes
 
                     string[] quotesData = messageData[1].Split('|');
 
-                    if (quotesData.Length != 3)
+                    if (quotesData.Length != 4)
                         continue;
 
                     int mt4Login = int.Parse(messageData[0]);
                     string vSymbol = quotesData[0];
                     double vAsk = double.Parse(quotesData[1]);
                     double vBid = double.Parse(quotesData[2]);
+                    int vSpread = int.Parse(quotesData[3]);
 
-                    Console.WriteLine("Login: " + mt4Login + ", Symbol: " + vSymbol + ", Ask: " + vAsk + ", Bid: " + vBid);
+                    Console.WriteLine("Login: " + mt4Login + ", Symbol: " + vSymbol + ", Ask: " + vAsk + ", Bid: " + vBid, ", Spread: " + vSpread);
                 }
             }
         }

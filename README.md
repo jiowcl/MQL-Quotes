@@ -23,6 +23,16 @@ MT4 Client Quotes Export
 | `AllowSymbols`            | Allow trading Symbols |
 | `OnlyInMarketWatch`       | Only push symbols in market watch |
 
+# Publisher Response
+
+| Properties | Description |
+| --- | --- |
+| `Login`   | Login |
+| `Symbol`  | Symbol name |
+| `Ask`     | Ask price |
+| `Bid`     | Bid price |
+| `Spread`  | Spread value in points |
+
 # License
 
 Copyright (c) 2017-2019 ji-Feng Tsai.<br/>

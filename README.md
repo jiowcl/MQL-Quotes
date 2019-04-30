@@ -42,7 +42,7 @@ Code released under the MIT license.
 
 # TODO
 
-- More examples.
+- More examples
 
 # Donation
 

@@ -1,5 +1,9 @@
 # MQL-Quotes
+
 MT4 Client Quotes Export, Can be easily integrated with personal websites without the MT4 Manager API.
+
+![GitHub](https://img.shields.io/github/license/jiowcl/MQL-Quotes.svg)
+![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/dingmaotu/mql-zmq.svg)
 
 # Environment
 

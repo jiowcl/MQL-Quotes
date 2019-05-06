@@ -1,11 +1,15 @@
 ﻿using NetMQ;
 using NetMQ.Sockets;
 using System;
+using ConsoleQuotes.MT4;
 
 namespace ConsoleQuotes
 {
     class Program
     {
+        /// <summary>
+        /// Main
+        /// </summary>
         public static void Main(string[] args)
         {
             using (SubscriberSocket subSocket = new SubscriberSocket())
@@ -28,13 +32,16 @@ namespace ConsoleQuotes
                     if (quotesData.Length != 4)
                         continue;
 
-                    int mt4Login = int.Parse(messageData[0]);
-                    string vSymbol = quotesData[0];
-                    double vAsk = double.Parse(quotesData[1]);
-                    double vBid = double.Parse(quotesData[2]);
-                    int vSpread = int.Parse(quotesData[3]);
+                    Response response = new Response
+                    {
+                        Login = int.Parse(messageData[0]),
+                        Symbol = quotesData[0],
+                        Ask = double.Parse(quotesData[1]),
+                        Bid = double.Parse(quotesData[2]),
+                        Spread = int.Parse(quotesData[3])
+                    };
 
-                    Console.WriteLine("Login: " + mt4Login + ", Symbol: " + vSymbol + ", Ask: " + vAsk + ", Bid: " + vBid, ", Spread: " + vSpread);
+                    Console.WriteLine("Login: " + response.Login + ", Symbol: " + response.Symbol + ", Ask: " + response.Ask + ", Bid: " + response.Bid, ", Spread: " + response.Spread);
                 }
             }
         }

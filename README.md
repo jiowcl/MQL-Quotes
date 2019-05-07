@@ -17,26 +17,6 @@ MT4 Client Quotes Export, Can be easily integrated with personal websites withou
 - Remote Publisher and Subscriber (Based on IP address)
 - Custom export symbols in MarketWatch
 
-# Publisher Optins
-
-| Properties | Description |
-| --- | --- |
-| `Server`                  | Bind the Publisher server IP address |
-| `ServerDelayMilliseconds` | Push the order to subscriber delay milliseconds |
-| `ServerReal`              | Under real server |
-| `AllowSymbols`            | Allow trading Symbols |
-| `OnlyInMarketWatch`       | Only push symbols in market watch |
-
-# Publisher Response
-
-| Properties | Type | Description |
-| --- | --- | --- |
-| `Login`  | Integer | Login |
-| `Symbol` | String  | Symbol name |
-| `Ask`    | Double  | Ask price |
-| `Bid`    | Double  | Bid price |
-| `Spread` | Integer | Spread value in points |
-
 # License
 
 Copyright (c) 2017-2019 ji-Feng Tsai.<br/>

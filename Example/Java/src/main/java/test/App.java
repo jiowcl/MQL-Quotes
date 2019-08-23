@@ -38,7 +38,7 @@ public final class App {
             if (quoteData.length != 4)
                 continue;
 
-            System.out.println("Login: " + messageData[0] + ", Symbol: " + quoteData[0] + ", Ask: " + quoteData[1] + ", Bid: " + quoteData[3] + ", Spread: " + quoteData[4]);
+            System.out.println("Login: " + messageData[0] + ", Symbol: " + quoteData[0] + ", Ask: " + quoteData[1] + ", Bid: " + quoteData[2] + ", Spread: " + quoteData[3]);
         }
 
         subscriber.disconnect(serverAddr);

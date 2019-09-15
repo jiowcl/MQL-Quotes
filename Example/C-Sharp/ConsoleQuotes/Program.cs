@@ -5,7 +5,7 @@ using ConsoleQuotes.MT4;
 
 namespace ConsoleQuotes
 {
-    class Program
+    public class Program
     {
         /// <summary>
         /// Main

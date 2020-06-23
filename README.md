@@ -19,7 +19,7 @@ MT4 Client Quotes Export, Can be easily integrated with personal websites withou
 
 ## License
 
-Copyright (c) 2017-2019 Ji-Feng Tsai.  
+Copyright (c) 2017-2020 Ji-Feng Tsai.  
 MQL-Zmq Copyright (c) Ding Li [ZeroMQ for MQL](https://github.com/dingmaotu).
 
 Code released under the MIT license.

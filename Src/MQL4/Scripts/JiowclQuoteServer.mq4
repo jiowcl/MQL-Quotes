@@ -1,6 +1,6 @@
 //+------------------------------------------------------------------+
 //|                                            JiowclQuoteServer.mq4 |
-//|                                Copyright 2017-2020, Ji-Feng Tsai |
+//|                                Copyright 2017-2021, Ji-Feng Tsai |
 //|                                        https://github.com/jiowcl |
 //+------------------------------------------------------------------+
 #property copyright   "Copyright 2020, Ji-Feng Tsai"
@@ -48,8 +48,8 @@ Symbols symbolinfo[];
 int     prev_symbolinfosize = 0;
 
 //--- Globales File
-string       local_symbolallow[];
-int          symbolallow_size = 0;
+string  local_symbolallow[];
+int     symbolallow_size = 0;
 
 //+------------------------------------------------------------------+
 //| Script program start function                                    |
@@ -94,16 +94,16 @@ bool DetectEnvironment()
         return false;
       }
     
-    zmq_server = Server;
-    zmq_pushdelay = (ServerDelayMilliseconds > 0) ? ServerDelayMilliseconds : 10;
-    zmq_runningstatus = false;
+    zmq_server          = Server;
+    zmq_pushdelay       = (ServerDelayMilliseconds > 0) ? ServerDelayMilliseconds : 10;
+    zmq_runningstatus   = false;
     symbolinmarketwatch = OnlyInMarketWatch;
     
     // Load the Symbol allow map
     if (AllowSymbols != "")
       {
         string symboldata[];
-        int    symbolsize = StringSplit(AllowSymbols, ',', symboldata);
+        int    symbolsize  = StringSplit(AllowSymbols, ',', symboldata);
         int    symbolindex = 0;
         
         ArrayResize(local_symbolallow, symbolsize);
@@ -151,7 +151,7 @@ void StartZmqServer()
     while (!IsStopped())
       {
         ticketstart = GetTickCount();
-        changed = GetCurrentSymbolsOnTicket();
+        changed     = GetCurrentSymbolsOnTicket();
         
         if (changed > 0)
           UpdateCurrentSymbolsOnTicket();
@@ -187,7 +187,7 @@ void StopZmqServer()
 //+------------------------------------------------------------------+
 int GetCurrentSymbolsOnTicket()
   {       
-    int changed = 0;
+    int changed     = 0;
     int symbolindex = 0;
     
     symbolinfosize = SymbolsTotal(symbolinmarketwatch);
@@ -205,7 +205,7 @@ int GetCurrentSymbolsOnTicket()
         string symbolname    = SymbolName(symbolindex, symbolinmarketwatch);
         double vask          = MarketInfo(symbolname, MODE_ASK);
         double vbid          = MarketInfo(symbolname, MODE_BID);
-        int    vspread       =(int)MarketInfo(symbolname, MODE_SPREAD);
+        int    vspread       =(int) MarketInfo(symbolname, MODE_SPREAD);
         
         if (GetSymbolAllowed(symbolname) == false)
           continue;
@@ -245,10 +245,10 @@ void UpdateCurrentSymbolsOnTicket()
       {
         string symbolname = SymbolName(symbolindex, symbolinmarketwatch);
       
-        symbolinfo[symbolindex].ask = MarketInfo(symbolname, MODE_ASK);
-        symbolinfo[symbolindex].bid = MarketInfo(symbolname, MODE_BID);
+        symbolinfo[symbolindex].ask    = MarketInfo(symbolname, MODE_ASK);
+        symbolinfo[symbolindex].bid    = MarketInfo(symbolname, MODE_BID);
         symbolinfo[symbolindex].digits = (int) MarketInfo(symbolname, MODE_DIGITS);
-        symbolinfo[symbolindex].point = MarketInfo(symbolname, MODE_POINT);
+        symbolinfo[symbolindex].point  = MarketInfo(symbolname, MODE_POINT);
         symbolinfo[symbolindex].spread = (int) MarketInfo(symbolname, MODE_SPREAD);
       }
   }

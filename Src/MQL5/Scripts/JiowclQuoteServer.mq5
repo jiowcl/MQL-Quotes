@@ -97,16 +97,16 @@ bool DetectEnvironment()
         return false;
       }
     
-    zmq_server = Server;
-    zmq_pushdelay = (ServerDelayMilliseconds > 0) ? ServerDelayMilliseconds : 10;
-    zmq_runningstatus = false;
+    zmq_server          = Server;
+    zmq_pushdelay       = (ServerDelayMilliseconds > 0) ? ServerDelayMilliseconds : 10;
+    zmq_runningstatus   = false;
     symbolinmarketwatch = OnlyInMarketWatch;
     
     // Load the Symbol allow map
     if (AllowSymbols != "")
       {
         string symboldata[];
-        int    symbolsize = StringSplit(AllowSymbols, ',', symboldata);
+        int    symbolsize  = StringSplit(AllowSymbols, ',', symboldata);
         int    symbolindex = 0;
         
         ArrayResize(local_symbolallow, symbolsize);
@@ -154,7 +154,7 @@ void StartZmqServer()
     while (!IsStopped())
       {
         ticketstart = GetTickCount();
-        changed = GetCurrentSymbolsOnTicket();
+        changed     = GetCurrentSymbolsOnTicket();
         
         if (changed > 0)
           UpdateCurrentSymbolsOnTicket();
@@ -248,10 +248,10 @@ void UpdateCurrentSymbolsOnTicket()
       {
         string symbolname = SymbolName(symbolindex, symbolinmarketwatch);
       
-        symbolinfo[symbolindex].ask = SymbolInfoDouble(symbolname, SYMBOL_ASK);
-        symbolinfo[symbolindex].bid = SymbolInfoDouble(symbolname, SYMBOL_BID);
+        symbolinfo[symbolindex].ask    = SymbolInfoDouble(symbolname, SYMBOL_ASK);
+        symbolinfo[symbolindex].bid    = SymbolInfoDouble(symbolname, SYMBOL_BID);
         symbolinfo[symbolindex].digits = (int) SymbolInfoInteger(symbolname, SYMBOL_DIGITS);
-        symbolinfo[symbolindex].point = SymbolInfoDouble(symbolname, SYMBOL_POINT);
+        symbolinfo[symbolindex].point  = SymbolInfoDouble(symbolname, SYMBOL_POINT);
         symbolinfo[symbolindex].spread = (int) SymbolInfoInteger(symbolname, SYMBOL_SPREAD);
       }
   }

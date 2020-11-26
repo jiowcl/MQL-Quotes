@@ -1,5 +1,5 @@
 //+------------------------------------------------------------------+
-//|                                            JiowclQuoteServer.mq4 |
+//|                                            JiowclQuoteServer.mq5 |
 //|                                Copyright 2017-2021, Ji-Feng Tsai |
 //|                                        https://github.com/jiowcl |
 //+------------------------------------------------------------------+
@@ -34,7 +34,7 @@ const string app_name    = "Jiowcl Expert Advisor";
 
 //--- Globales ZMQ
 Context context;
-Socket publisher(context, ZMQ_PUB);
+Socket  publisher(context, ZMQ_PUB);
 
 string zmq_server        = "";
 uint   zmq_pushdelay     = 0;
@@ -59,21 +59,12 @@ void OnStart()
     if (DetectEnvironment() == false)
       {
         Alert("Error: The property is fail, please check and try again.");
-        
         return;
       }
       
     StartZmqServer();
     StopZmqServer();
   }
-
-//+------------------------------------------------------------------+
-//| Override deinit function                                         |
-//+------------------------------------------------------------------+
-//void OnDeinit(const int reason)
-//  {
-//    StopZmqServer();
-//  }
 
 //+------------------------------------------------------------------+
 //| Detect the script parameters                                     |
@@ -138,7 +129,6 @@ void StartZmqServer()
     if (result != 1)
       {
         Alert("Error: Unable to bind server, please check your port.");
-      
         return;
       }
     
@@ -267,9 +257,7 @@ bool PushToSubscriber(const string message)
     ZmqMsg replymsg(message);
     
     int result = publisher.send(replymsg);
-    
-    Print( message );
-    
+      
     return (result == 1) ? true : false;
   }
 

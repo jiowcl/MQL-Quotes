@@ -34,7 +34,7 @@ const string app_name    = "Jiowcl Expert Advisor";
 
 //--- Globales ZMQ
 Context context;
-Socket publisher(context, ZMQ_PUB);
+Socket  publisher(context, ZMQ_PUB);
 
 string zmq_server        = "";
 uint   zmq_pushdelay     = 0;
@@ -59,7 +59,6 @@ void OnStart()
     if (DetectEnvironment() == false)
       {
         Alert("Error: The property is fail, please check and try again.");
-        
         return;
       }
       
@@ -135,7 +134,6 @@ void StartZmqServer()
     if (result != 1)
       {
         Alert("Error: Unable to bind server, please check your port.");
-      
         return;
       }
     
@@ -205,7 +203,7 @@ int GetCurrentSymbolsOnTicket()
         string symbolname    = SymbolName(symbolindex, symbolinmarketwatch);
         double vask          = MarketInfo(symbolname, MODE_ASK);
         double vbid          = MarketInfo(symbolname, MODE_BID);
-        int    vspread       =(int) MarketInfo(symbolname, MODE_SPREAD);
+        int    vspread       = (int) MarketInfo(symbolname, MODE_SPREAD);
         
         if (GetSymbolAllowed(symbolname) == false)
           continue;
@@ -264,9 +262,7 @@ bool PushToSubscriber(const string message)
     ZmqMsg replymsg(message);
     
     int result = publisher.send(replymsg);
-    
-    Print( message );
-    
+       
     return (result == 1) ? true : false;
   }
 

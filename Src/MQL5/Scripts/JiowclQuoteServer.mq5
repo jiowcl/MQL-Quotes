@@ -27,10 +27,12 @@ struct Symbols
     double point;
     int    digits;
     int    spread;
+    string category;
+    string country;
   };
 
 //--- Globales Application
-const string app_name    = "Jiowcl Expert Advisor";
+const string app_name = "Jiowcl Expert Advisor";
 
 //--- Globales ZMQ
 Context context;
@@ -238,11 +240,13 @@ void UpdateCurrentSymbolsOnTicket()
       {
         string symbolname = SymbolName(symbolindex, symbolinmarketwatch);
       
-        symbolinfo[symbolindex].ask    = SymbolInfoDouble(symbolname, SYMBOL_ASK);
-        symbolinfo[symbolindex].bid    = SymbolInfoDouble(symbolname, SYMBOL_BID);
-        symbolinfo[symbolindex].digits = (int) SymbolInfoInteger(symbolname, SYMBOL_DIGITS);
-        symbolinfo[symbolindex].point  = SymbolInfoDouble(symbolname, SYMBOL_POINT);
-        symbolinfo[symbolindex].spread = (int) SymbolInfoInteger(symbolname, SYMBOL_SPREAD);
+        symbolinfo[symbolindex].ask      = SymbolInfoDouble(symbolname, SYMBOL_ASK);
+        symbolinfo[symbolindex].bid      = SymbolInfoDouble(symbolname, SYMBOL_BID);
+        symbolinfo[symbolindex].digits   = (int) SymbolInfoInteger(symbolname, SYMBOL_DIGITS);
+        symbolinfo[symbolindex].point    = SymbolInfoDouble(symbolname, SYMBOL_POINT);
+        symbolinfo[symbolindex].spread   = (int) SymbolInfoInteger(symbolname, SYMBOL_SPREAD);
+        symbolinfo[symbolindex].category =  SymbolInfoString(symbolname, SYMBOL_CATEGORY);
+        symbolinfo[symbolindex].country  =  SymbolInfoString(symbolname, SYMBOL_COUNTRY);
       }
   }
 

@@ -7,26 +7,26 @@ MT4/MT5 Client Quotes Export, Can be easily integrated with personal websites wi
 
 ## Environment
 
-- Windows 7 above (recommend)
-- MetaTrader 4 Client / MetaTrader 5 Client
-- [ZeroMQ](https://github.com/zeromq)
-- [ZeroMQ for MQL](https://github.com/dingmaotu/mql-zmq)
+- Windows 7 above (recommend)  
+- MetaTrader 4 Client / MetaTrader 5 Client  
+- [ZeroMQ](https://github.com/zeromq)  
+- [ZeroMQ for MQL](https://github.com/dingmaotu/mql-zmq)  
 
 ## Features
 
-- Remote Publisher and Subscriber (Based on IP address)
-- Custom export symbols in MarketWatch
+- Remote Publisher and Subscriber (Based on IP address)  
+- Custom export symbols in MarketWatch  
 
 ## License
 
 Copyright (c) 2017-2021 Ji-Feng Tsai.  
-MQL-Zmq Copyright (c) Ding Li [ZeroMQ for MQL](https://github.com/dingmaotu).
+MQL-Zmq Copyright (c) Ding Li [ZeroMQ for MQL](https://github.com/dingmaotu).  
 
-Code released under the MIT license.
+Code released under the MIT license.  
 
 ## TODO
 
-- More examples
+- More examples  
 
 ## Donation
 

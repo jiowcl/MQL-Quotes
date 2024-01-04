@@ -1,9 +1,9 @@
 //+------------------------------------------------------------------+
 //|                                            JiowclQuoteServer.mq4 |
-//|                                Copyright 2017-2021, Ji-Feng Tsai |
+//|                                Copyright 2017-2024, Ji-Feng Tsai |
 //|                                        https://github.com/jiowcl |
 //+------------------------------------------------------------------+
-#property copyright   "Copyright 2020, Ji-Feng Tsai"
+#property copyright   "Copyright 2024, Ji-Feng Tsai"
 #property link        "https://github.com/jiowcl/MQL-Quotes"
 #property version     "1.00"
 #property description "MT4 Quote export application. Push all quotes price to subscribers."
